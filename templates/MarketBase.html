@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock title %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .Body{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">SaharColor</a>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Market' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Products' %}">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Category</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">About</a>
+        </li>
+      </ul>
+      <form class="d-flex" action="{% url 'SearchTry' %}" method="post">
+          {% csrf_token %}
+        <input class="form-control me-2" type="text" placeholder="Search" name="Text">
+        <input type="submit" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+</nav>
+    <div class="Body">
+        {% block body %}{% endblock body %}
+    </div>
+</body>
+</html>

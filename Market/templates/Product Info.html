@@ -1,0 +1,13 @@
+{% extends "MarketBase.html" %}
+
+{% block title %}
+    Market - ProductInfo
+{% endblock %}
+
+{% block body %}
+    <br>
+    <img src="{{ Product.Image.url }}" class="rounded" width="33%" alt="{{ Product.Name }}">
+    <h3>{{ Product.Name }}</h3><br>
+    <h5>{{ Product.Description }}</h5>
+    <h4>{{ Product.Price }}</h4>
+{% endblock %}
